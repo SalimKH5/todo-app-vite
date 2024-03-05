@@ -10,8 +10,10 @@ function App() {
 
   const [valueTodo,setValueTodo]=useState("");
 
-  const [switchThemes,setSwitchThemes]=useState(false)
+  const [switchThemes,setSwitchThemes]=useState(true)
 
+
+  const [action,setAction]=useState(0);
 
   const handleCreateTodo=()=>{
     if(valueTodo!==""){
@@ -53,23 +55,51 @@ function App() {
                                                         value={valueTodo} type="text" className="w-full h-full flex-1 outline-none" />
                                                   </div>
                                                   <div className="w-full flex max-h-[40vh]  flex-col overflow-y-auto">
-                                                   {
-                                                    todoList?.map((todo)=>(
-                                                      <Todo todo={todo} setTodoList={setTodoList} setTodocopy={setTodocopy}/>
-                                                    ))
-                                                   }
+                                                  {
+                                                          todoList?.map((todo) => {
+                                                            if (action === 1) {
+                                                              if (todo.selected === false) {
+                                                                return (
+                                                                  <Todo key={todo.id} todo={todo} setTodoList={setTodoList} setTodocopy={setTodocopy} />
+                                                                );
+                                                              }
+                                                            }else{
+                                                              if (action === 2) {
+                                                                if (todo.selected === true) {
+                                                                  return (
+                                                                    <Todo key={todo.id} todo={todo} setTodoList={setTodoList} setTodocopy={setTodocopy} />
+                                                                  );
+                                                                }
+                                                              }else{
+                                                                if (action === 0) {
+                                                                    return (
+                                                                      <Todo key={todo.id} todo={todo} setTodoList={setTodoList} setTodocopy={setTodocopy} />
+                                                                    );
+                                                                
+                                                                }
+                                                              }
+                                                            }
+                                                            return null; // You need to return something in case the conditions are not met
+                                                          })
+                                                        }
+
                                                    </div>
                                                     <div className="w-full text-[#9fa0ac] h-12 px-2 py-4 gap-3 border-b-2 bg-white flex items-center justify-between">
                                                          <div className="">
                                                              {todoList.length} items left
                                                          </div>
                                                          <ul className='hidden lg:flex  list-none items-center gap-3'>
-                                                              <li className='cursor-pointer' onClick={()=>{
+                                                              <li 
+                                                              className={`cursor-pointer ${action===0 && "text-blue-400"}`}
+                                                              
+                                                              onClick={()=>{
+                                                                setAction(0)
                                                                 setTodoList(todocopy);
                                                               }}>All</li>                                                          
                                                               <li
-                                                              className='cursor-pointer'
+                                                               className={`cursor-pointer ${action===1 && "text-blue-400"}`}
                                                                 onClick={()=>{
+                                                                  setAction(1)
                                                                   setTodoList(todocopy);
                                                                   setTodoList((prev)=>{
                                                                     return prev.filter((todo)=>todo.selected===false)
@@ -78,8 +108,9 @@ function App() {
                                                                 >
                                                                 Active</li>                                                          
                                                               <li 
-                                                              className='cursor-pointer'
+                                                               className={`cursor-pointer ${action===2 && "text-blue-400"}`}
                                                               onClick={()=>{
+                                                                setAction(2)
                                                                 setTodoList(todocopy);
                                                                 setTodoList((prev)=>{
                                                                   return prev.filter((todo)=>todo.selected===true)
@@ -94,9 +125,35 @@ function App() {
                                                     </div>
                                             </div>
                                             <ul className="w-full list-none h-12 px-2 py-4 gap-3 border-b-2 bg-white flex lg:hidden  items-center justify-center ">
-                                                      <li>All</li>                                                          
-                                                      <li>Active</li>                                                          
-                                                      <li>Completed</li>                                                          
+                                            <li 
+                                                              className={`cursor-pointer ${action===0 && "text-blue-400"}`}
+                                                              
+                                                              onClick={()=>{
+                                                                setAction(0)
+                                                                setTodoList(todocopy);
+                                                              }}>All</li>                                                          
+                                                              <li
+                                                               className={`cursor-pointer ${action===1 && "text-blue-400"}`}
+                                                                onClick={()=>{
+                                                                  setAction(1)
+                                                                  setTodoList(todocopy);
+                                                                  setTodoList((prev)=>{
+                                                                    return prev.filter((todo)=>todo.selected===false)
+                                                                  })
+                                                                }}
+                                                                >
+                                                                Active</li>                                                          
+                                                              <li 
+                                                               className={`cursor-pointer ${action===2 && "text-blue-400"}`}
+                                                              onClick={()=>{
+                                                                setAction(2)
+                                                                setTodoList(todocopy);
+                                                                setTodoList((prev)=>{
+                                                                  return prev.filter((todo)=>todo.selected===true)
+                                                                })
+                                                              }}
+                                                              
+                                                              >Completed</li>                                                          
                                             </ul>
                                             </div>
                                     </div>
