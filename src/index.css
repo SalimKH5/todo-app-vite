@@ -18,18 +18,18 @@ body{
 }
 
 .background-light-mobile{
-  background: url("assets\bg-mobile-light.jpg")  no-repeat ;
+  background: url("/bg-mobile-light.jpg")  no-repeat ;
   background-size: cover;
 }
 
 .background-dark{
-  background: url("assets\bg-mobile-dark.jpg") no-repeat  ;
+  background: url("/bg-mobile-dark.jpg") no-repeat  ;
 
   background-size: cover;
 }
 
 .background-dark-mobile{
-  background: url("assets\bg-mobile-dark.jpg")  no-repeat ;
+  background: url("/bg-mobile-dark.jpg")  no-repeat ;
   background-size: cover;
 }
 
