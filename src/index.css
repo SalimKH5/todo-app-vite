@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.background-light{
+  background: url("assets\bg-desktop-light.jpg") no-repeat  ;
+
+  background-size: cover;
+}
+
+.background-light-mobile{
+  background: url("assets\bg-mobile-light.jpg")  no-repeat ;
+  background-size: cover;
+}
+
+.background-dark{
+  background: url("assets\bg-mobile-dark.jpg") no-repeat  ;
+
+  background-size: cover;
+}
+
+.background-dark-mobile{
+  background: url("assets\bg-mobile-dark.jpg")  no-repeat ;
+  background-size: cover;
+}
+
+
+:root {
+  /* Light Theme */
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: #d2d3db;
+  --dark-grayish-blue: #9fa0ac;
+  --very-dark-grayish-blue: #484b6a;
+  
+  /* Dark Theme */
+  --very-dark-blue: #161722;
+  --very-dark-desaturated-blue: #25273c;
+  --dark-grayish-blue-dark: #777a92;
+  --light-grayish-blue-dark: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
+  --very-darker-grayish-blue: hsl(237, 14%, 26%);
+}
+
