@@ -10,7 +10,7 @@ const Todo = ({ todo,setTodoList ,setTodocopy}) => {
                 setTodoList(prev => {
                   const index = prev.findIndex(todoselected => todoselected.id === todo.id);
                   if (index !== -1) {
-                      const updatedTodo = { ...prev[index], selected: true };
+                      const updatedTodo = { ...prev[index], selected: !todo.selected };
                       const updatedList = [...prev.slice(0, index), updatedTodo, ...prev.slice(index + 1)];
                       return updatedList;
                   }
@@ -19,14 +19,14 @@ const Todo = ({ todo,setTodoList ,setTodocopy}) => {
               setTodocopy(prev => {
                   const index = prev.findIndex(todoselected => todoselected.id === todo.id);
                   if (index !== -1) {
-                      const updatedTodo = { ...prev[index], selected: true };
+                      const updatedTodo = { ...prev[index], selected: !todo.selected };
                       const updatedList = [...prev.slice(0, index), updatedTodo, ...prev.slice(index + 1)];
                       return updatedList;
                   }
                   return prev;
               });
                   }} >
-            {todo.selected && <img src="src/assets/icon-check.svg" className="w-full h-full" alt="Check icon cursor-pointer" />}
+            {todo.selected && <img src="icon-check.svg" className="w-full h-full cursor-pointer" />}
         </button>                         
       </div>
       <div className="w-full  flex-1 flex items-center jusitfy-center">
@@ -41,7 +41,7 @@ const Todo = ({ todo,setTodoList ,setTodocopy}) => {
     });
 
 }} className="w-full flex-[0.1] flex items-center justify-center">
-    <img src="src\assets\icon-cross.svg" className='cursor-pointer' alt="" />
+    <img src="icon-cross.svg" className='cursor-pointer' alt="" />
 </div>
 
       

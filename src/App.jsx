@@ -18,7 +18,7 @@ function App() {
         setTodoList((prev)=>[...prev,{text:valueTodo,id:prev.length+1,selected:false}]);
 
         setTodocopy((prev)=>[...prev,{text:valueTodo,id:prev.length+1,selected:false}])
-        // setValueTodo("")
+        setValueTodo("")
     }else{
       alert("please write a todo item")
     }
@@ -34,11 +34,11 @@ function App() {
                           <div className="w-full max-w-md h-full z-50">
                                     <div className="w-full h-full  flex flex-col  lg:py-24 gap-3">
                                             <div className="w-full flex-[0.3]  flex items-center justify-between">
-                                                    <h1 className='text-2xl font-bold tracking-wider uppercase text-white'>Todo</h1>
+                                                    <h1 className='text-2xl 2xl:text-4xl font-bold tracking-wider uppercase text-white'>Todo</h1>
                                                     {
                                                    switchThemes?
-                                                   <img onClick={()=>setSwitchThemes((prev)=>!prev)} src="src\assets\icon-sun.svg" alt=""  className='cursor-pointer w-6 h-6'/>:
-                                                   <img onClick={()=>setSwitchThemes((prev)=>!prev)} src="src\assets\icon-moon.svg" alt=""  className='cursor-pointer w-6 h-6'/>
+                                                   <img onClick={()=>setSwitchThemes((prev)=>!prev)} src="icon-sun.svg" alt=""  className='cursor-pointer w-6 h-6 2xl:w-8 2xl:h-8'/>:
+                                                   <img onClick={()=>setSwitchThemes((prev)=>!prev)} src="icon-moon.svg" alt=""  className='cursor-pointer w-6 h-6 2xl:w-8 2xl:h-8'/>
                                                     }
                                                     
                                                     
