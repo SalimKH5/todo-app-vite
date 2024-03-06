@@ -113,7 +113,7 @@ function App() {
                                                               {/* <img src="src\assets\icon-check.svg"   className='w-full h-full  '/> */}
                                                         </button>
                                                         <input onChange={(e)=>setValueTodo(e.target.value)} 
-                                                        placeholder='write a task'
+                                                        placeholder='Create a new todo...'
                                                         value={valueTodo} type="text" className={`w-full h-full flex-1 outline-none bg-transparent `} />
                                                   </div>
                                                   <div className="w-full flex max-h-[60vh]  [&>*:first-child]:rounded-t-[8px] [&>*:last-child]:rounded-b-[8px] flex-col overflow-y-auto">
