@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const Todo = ({ todo,setTodoList ,setTodocopy}) => {
+const Todo = ({ todo,setTodoList ,setTodocopy,switchThemes}) => {
   
 
   return (
-    <div className="w-full h-12 py-4 px-2  gap-2 border-b-2 bg-white flex items-center">
+    <div className={`w-full h-12 py-4 px-2  gap-2 border-b-[1px]   border-b-[#4d5066] ${switchThemes ?"bg-[#25273c]":"bg-white"} flex items-center`}>
       <div className="w-full  flex-[0.1] flex items-center jusitfy-center">
-        <button type="button" className={`w-5 h-5   rounded-full  relative flex items-center  p-[3px] justify-center  ${todo.selected ?"bg-gradient-to-t from-[#5f69d7] to-[#f47871]":"border-[2px]"}`} onClick={() => {
+        <button type="button" className={`w-5 h-5   rounded-full  relative flex items-center  p-[3px] justify-center  ${todo.selected ?"bg-gradient-to-t from-[#5f69d7] to-[#f47871]":"border-[1px]"}`} onClick={() => {
                 setTodoList(prev => {
                   const index = prev.findIndex(todoselected => todoselected.id === todo.id);
                   if (index !== -1) {

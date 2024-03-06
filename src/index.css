@@ -46,9 +46,9 @@ body{
   --very-dark-blue: #161722;
   --very-dark-desaturated-blue: #25273c;
   --dark-grayish-blue-dark: #777a92;
-  --light-grayish-blue-dark: hsl(234, 39%, 85%);
+  --light-grayish-blue-dark: #cacde8;
   --light-grayish-blue-hover: hsl(236, 33%, 92%);
-  --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
+  --very-dark-grayish-blue-dark: #4d5066;
   --very-darker-grayish-blue: hsl(237, 14%, 26%);
 }
 
